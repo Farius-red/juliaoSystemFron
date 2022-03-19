@@ -1,0 +1,68 @@
+
+
+<ion-row>
+  <ion-col size="12" size-lg="6">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">Registro</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+          <form [formGroup]="formRegisterU" (ngSubmit)="registroU()"> 
+            <ion-item>
+              <ion-label position="floating"> Nombres </ion-label>
+              <ion-input  formControlName="nombres"></ion-input>
+              <!-- <ion-text color="danger">error campo requerido</ion-text>
+              <ion-icon color="danger" name="alert-circle-outline"></ion-icon> -->
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating"> apellidos</ion-label>
+               <ion-input formControlName="apellidos"></ion-input>
+              <!-- <ion-text color="danger">*</ion-text>  -->
+            </ion-item>
+           
+            <ion-item>
+              <ion-label position="floating"> Telefono </ion-label>
+              <ion-input  formControlName="telefono" type="tel"></ion-input>
+              <!-- <ion-text color="danger">*</ion-text>
+              <ion-icon color="danger" name="alert-circle-outline"></ion-icon> -->
+            </ion-item>
+            
+            <ion-item>
+              <ion-label position="floating"> correo </ion-label>
+              <ion-input formControlName="email" type="email" ></ion-input>
+              <!-- <ion-text color="danger">*</ion-text>
+              <ion-icon color="danger" name="alert-circle-outline"></ion-icon> -->
+            </ion-item>
+            
+            <ion-item >
+              <ion-label position="floating">password </ion-label>
+              <ion-input  formControlName="password" type="password"></ion-input>
+              <!-- <ion-text color="danger">*</ion-text>
+              <ion-icon color="danger" name="alert-circle-outline"></ion-icon> -->
+            </ion-item>
+
+            <ion-item >
+              <ion-label position="floating"> Confirmar password </ion-label>
+              <ion-input  formControlName="confirmPassword" type="password"></ion-input>
+              <!-- <ion-text color="danger">*</ion-text>
+              <ion-icon color="danger" name="alert-circle-outline"></ion-icon> -->
+            </ion-item>
+                  
+            <ion-row>
+              <ion-col size="8">
+                 <ion-button type="submit" [disabled]="formRegisterU.invalid">
+                   Registrar
+                 </ion-button>
+              </ion-col>
+            </ion-row>
+          </form>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-col>
+
+  <ion-col size="12"  size-lg="6">
+     <ion-img src="assets/imagenes/imagenLogin.jpg"></ion-img>
+  </ion-col>
+</ion-row>

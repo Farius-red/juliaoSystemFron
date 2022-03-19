@@ -1,0 +1,29 @@
+[
+    {
+        "icon": "home-outline",
+        "name": "Inicio",
+        "redirecto": "/inicio"
+    },
+   {
+           "icon": "log-out-outline",
+           "name": "Login",
+           "redirecto": "/auth/login"
+   } ,
+
+    {
+    "icon": "person-add-outline",
+    "name": "Registro",
+    "redirecto": "/auth/registro"
+    }, 
+
+    {
+        "icon": "log-out-outline",
+        "name": "Cerrar Session",
+        "redirecto": "/auth/cerrarSesion"
+        } 
+    
+
+]
+
+
+ 

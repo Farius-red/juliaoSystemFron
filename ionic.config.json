@@ -1,0 +1,7 @@
+{
+  "name": "workinDogAppAdmin",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
