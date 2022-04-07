@@ -50,7 +50,7 @@ const NAMES: string[] = [
   styleUrls: ['./tabla-padre.component.scss'],
 })
 export class TablaPadreComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
+  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit','acciones'];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -73,6 +73,7 @@ export class TablaPadreComponent implements OnInit {
   }
 
   applyFilter(event: Event) {
+    debugger;
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
@@ -80,10 +81,19 @@ export class TablaPadreComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
+  update(){}
+  whatsapp(){}
+  importCvc(){}
+  delete(){}
+  add(){}
+
+  verMas(){}
 }
 
 /** Builds and returns a new User. */
 function createNewUser(id: number): UserData {
+  
   const name =
     NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
     ' ' +

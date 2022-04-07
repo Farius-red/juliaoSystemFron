@@ -20,7 +20,14 @@
         "icon": "log-out-outline",
         "name": "Cerrar Session",
         "redirecto": "/auth/cerrarSesion"
-        } 
+        } ,
+
+
+        {
+            "icon": "call-outline",
+            "name": " Lista De Usuarios",
+            "redirecto": "/admin/listaUsuarios"
+            }
     
 
 ]
