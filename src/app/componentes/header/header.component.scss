@@ -1,0 +1,17 @@
+.lenguage{
+    width: 20%;
+    margin-left: 70%;
+}
+@media screen and (max-width: 800px) {
+    .lenguage{
+        width: 35%;
+        margin-left: 60%;
+    }
+  }
+
+  @media screen and (max-width:300px) {
+    .lenguage{
+        width: 35%;
+        margin-left: 40%;
+    }
+  }

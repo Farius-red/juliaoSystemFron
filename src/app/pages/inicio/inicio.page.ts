@@ -14,8 +14,7 @@ export class InicioPage implements OnInit {
   constructor(private  menuSvc: MenuSvcService) { }
 
   ngOnInit() {
-this.menu =this.menuSvc.getMenu();
-console.log(this.menu);
+    this.menu =this.menuSvc.getMenu()
   }
 
   

@@ -8,9 +8,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
 import { RegistroComponent } from './auth/registro/registro.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../utils/material/material.module';
 import { MatNativeDateModule } from '@angular/material/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 
@@ -29,6 +32,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     ReactiveFormsModule,
     MatNativeDateModule,
     MaterialModule,
+    FormsModule,
+    TranslateModule,
   ],
   exports:[
     HeaderComponent,
@@ -36,7 +41,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     LoginComponent,
     TablaPadreComponent,
     RegistroComponent,
-  
+    TranslateModule,
   ]
 })
 export class ComponentesModule { }

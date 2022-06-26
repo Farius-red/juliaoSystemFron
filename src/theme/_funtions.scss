@@ -1,0 +1,27 @@
+@mixin responsive ($movil:450px, $desk:1200px, $tablet:800px) {
+    @media screen and (max-width:$desk ) {
+        @content;
+       }  
+
+    @media screen and (max-width: $tablet) {
+       @content;
+      }    
+      @media screen and (max-width:$movil) {
+        @content;
+        }
+}
+
+@mixin grid($columnas, $gap, $movil:450px, $desk:1200px, $tablet:800px ) {
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    $gap:$gap;
+    
+    @include responsive($movil,$desk,$tablet);
+}
+
+@mixin flexbox($display,$direction, $corte, $just,$align ) {
+    display: $dis;
+    flex-flow: $direction $corte;
+    justify-content: $just;
+    align-items: $align;
+}

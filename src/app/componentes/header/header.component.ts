@@ -1,4 +1,6 @@
+import {TranslateService} from '@ngx-translate/core';
 import { Component, Input, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-header',
@@ -8,9 +10,30 @@ import { Component, Input, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
 @Input() menuId:string;
+seleccionada:string
 
-  constructor() { }
+ langs:string[]=[];
+  constructor(
+    private translate: TranslateService ) { 
+      
+      this.langs= this.translate.getLangs();
+      this.translate.setDefaultLang('en');
+      this.translate.setDefaultLang('es');
+        this.translate.addLangs(["es","en"]);
+        this.translate.use('es');
+       console.log(this.seleccionada)
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+ 
+  }
+
+
+
+  cambiaLang(event:any){
+   console.log(event)
+   this.translate.use(event)
+    
+  }
 
 }
