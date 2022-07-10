@@ -1,3 +1,4 @@
+
 import { TablaPadreComponent } from './tablas/tabla-padre.component';
 
 
@@ -11,9 +12,8 @@ import { RegistroComponent } from './auth/registro/registro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../utils/material/material.module';
 import { MatNativeDateModule } from '@angular/material/core';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { HttpClient } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule } from '@ngx-translate/core';
+
 import { FooterComponent } from './inicio/footer/footer.component';
 
 
@@ -26,6 +26,7 @@ import { FooterComponent } from './inicio/footer/footer.component';
      LoginComponent,
      TablaPadreComponent,
      RegistroComponent,
+     
     ],
   imports: [
     CommonModule,
@@ -43,6 +44,7 @@ import { FooterComponent } from './inicio/footer/footer.component';
     TablaPadreComponent,
     RegistroComponent,
     TranslateModule,
+   
   ]
 })
 export class ComponentesModule { }

@@ -18,7 +18,7 @@ import { AdminPage } from './admin.page';
     ComponentesModule,
   ],
   exports:[
-AdminPage,
+      AdminPage,
   ],
   declarations: [AdminPage]
 })
