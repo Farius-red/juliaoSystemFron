@@ -1,8 +1,13 @@
+import { getMenu } from './../../../state/menu.actions';
 import { MenuSvcService } from './../../core/servicios/menuSvc/menu-svc.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { MenuModel } from 'src/app/core/modelos/menu.Model';
+
 import { Router } from '@angular/router';
+import { MenuModel } from 'src/app/core/modelos/menu/menu.Model';
+import { Select, Store } from '@ngxs/store';
+import { MenuState } from 'src/state/menu.state';
+import { Menu } from 'src/assets/utils/enums/menu';
 
 @Component({
   selector: 'app-admin',
@@ -13,18 +18,20 @@ export class AdminPage implements OnInit {
 
   title: string = "admin";
   menuId:string ="inicio";
-  menu:Observable<MenuModel[]>
+  @Select(MenuState.getMenulist) menu$:Observable<MenuModel[]>;
   constructor( 
-    private menuSvc : MenuSvcService,
-    private route: Router
+   
+    private route: Router,
+    private store :Store,
     ) { }
 
   ngOnInit() {
-    this.menu =this.menuSvc.getMenu()
+    
     this.verificarRutas();
   }
 
   verificarRutas(){
     console.log(this.route.url)
+    this.store.dispatch(new getMenu(Menu.ADMIN));
   }
 }

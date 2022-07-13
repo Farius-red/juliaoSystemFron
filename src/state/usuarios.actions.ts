@@ -1,13 +1,14 @@
-import { NuevoUsuario } from './../app/core/modelos/Usuarios/nuevoUsuario.Model';
+import { NuevoUsuarioVO } from "src/app/core/modelos/Usuarios/nuevoUsuarioVO.Model";
+
 
 export class AddUsuario {
   static readonly type = '[Usuarios] Add ';
-  constructor(public payload: NuevoUsuario) { }
+  constructor(public payload: NuevoUsuarioVO) { }
 }
 
 export class UpdateUsuario{
   static readonly type = '[Usuarios] update'
-  constructor(public payload : NuevoUsuario){}
+  constructor(public payload : NuevoUsuarioVO){}
 }
 
 export class GetUsuario{

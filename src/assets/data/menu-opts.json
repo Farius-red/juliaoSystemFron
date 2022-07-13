@@ -2,31 +2,36 @@
     {
         "icon": "home-outline",
         "name": "Inicio",
-        "redirecto": "/inicio"
+        "redirecto": "/inicio",
+        "nameRol":"user"
     },
    {
            "icon": "log-out-outline",
            "name": "Login",
-           "redirecto": "/auth/login"
+           "redirecto": "/auth/login",
+           "nameRol":"user"
    } ,
-
+   
     {
     "icon": "person-add-outline",
     "name": "Registro",
-    "redirecto": "/auth/registro"
+    "redirecto": "/auth/registro",
+    "nameRol":"user"
     }, 
 
     {
         "icon": "log-out-outline",
         "name": "Cerrar Session",
-        "redirecto": "/auth/cerrarSesion"
+        "redirecto": "/auth/cerrarSesion",
+        "nameRol":"user"
         } ,
 
 
         {
             "icon": "call-outline",
             "name": " Lista De Usuarios",
-            "redirecto": "/admin/listaUsuarios"
+            "redirecto": "/admin/listaUsuarios",
+            "nameRol":"admin"
             }
     
 

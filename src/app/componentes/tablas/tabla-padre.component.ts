@@ -84,7 +84,7 @@ export class TablaPadreComponent implements OnInit {
 
   update(){}
   whatsapp(){}
-  importCvc(){}
+  importCvc($prueba){}
   delete(){}
   add(){}
 

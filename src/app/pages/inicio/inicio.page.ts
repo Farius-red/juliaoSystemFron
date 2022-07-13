@@ -1,7 +1,8 @@
 import { Observable } from 'rxjs';
 import { MenuSvcService } from './../../core/servicios/menuSvc/menu-svc.service';
 import { Component, OnInit } from '@angular/core';
-import { MenuModel } from 'src/app/core/modelos/menu.Model';
+import { MenuModel } from 'src/app/core/modelos/menu/menu.Model';
+
 
 @Component({
   selector: 'app-inicio',
@@ -14,7 +15,7 @@ export class InicioPage implements OnInit {
   constructor(private  menuSvc: MenuSvcService) { }
 
   ngOnInit() {
-    this.menu =this.menuSvc.getMenu()
+    
   }
 
   

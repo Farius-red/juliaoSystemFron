@@ -9,7 +9,7 @@
     </ion-header>
     <ion-content>
       <ion-list>
-  <ion-menu-toggle *ngFor="let c of menu | async">
+  <ion-menu-toggle *ngFor="let c of menu$  | async ;  " >
 
     <ion-item [routerLink]="c.redirecto" routerLinkActive="router-link-active">
     

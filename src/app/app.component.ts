@@ -1,10 +1,15 @@
+import { MenuModel } from './core/modelos/menu/menu.Model';
+import { MenuActive } from 'src/app/core/modelos/menu/menu.Model';
+import { MenuState } from 'src/state/menu.state';
+import { getMenu } from './../state/menu.actions';
 import { Component } from '@angular/core';
 import {  TranslateService } from '@ngx-translate/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { MenuSvcService } from './core/servicios/menuSvc/menu-svc.service';
 import { Observable } from 'rxjs';
-import { MenuModel } from './core/modelos/menu/menu.Model';
+
 import {  Router } from '@angular/router';
+import { Select,  Store } from '@ngxs/store';
+import { Menu } from 'src/assets/utils/enums/menu';
 
 @Component({
   selector: 'app-root',
@@ -14,27 +19,32 @@ import {  Router } from '@angular/router';
 export class AppComponent {
  
 keywords:string;
-menu:Observable<MenuModel[]>
+@Select(MenuState.getMenulist) menu$:Observable<MenuModel[]>;
 menuId:string ="inicio";
   constructor(
     private titleService: Title,
     private metaService: Meta,
     private translateService: TranslateService,
-    private  menuSvc: MenuSvcService,
-    private route : Router
+    
+    private route : Router,
+    private store : Store
                                        )
   { }
 
 
   ngOnInit(): void {
-    this.menu =this.menuSvc.getMenu()
-
     this.verificarRutas(); 
     this.addMetas();
   }
 
  verificarRutas(){
-   console.log(this.route.url)
+  console.log(this.route.url);
+  
+    if(this.route.url == "/")
+      this.store.dispatch(new getMenu(Menu.USER));
+      this.menu$.subscribe(res=>{
+        console.log(res);
+      })
  }
 
   addMetas(){

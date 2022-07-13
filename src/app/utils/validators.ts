@@ -21,12 +21,11 @@ export class Validaciones{
       }
 
 }
-
-
- function containNumber(value:string){
-    return  value.split('').find(v=>this.isNumber(v)) !== undefined;
-}
-
 function isNumber(value:string){
   return   !isNaN(parseInt(value,10));
 }
+
+ function containNumber(value:string){
+    return  value.split('').find(v=>isNumber(v)) !== undefined;
+}
+
