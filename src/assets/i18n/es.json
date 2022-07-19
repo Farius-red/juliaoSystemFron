@@ -2,6 +2,13 @@
     
      "lenguage": "Idioma",
     "index":"Juliao System - Inicio",
+    "menu":{
+      "start":"Inicio",
+      "list_user":" Lista Usuarios",
+      "register":"Registro",
+      "login":"Iniciar Session",
+      "log_out":"Cerrar Session"
+    },
      "meta_key_words":{
         "title":"Aplicación -Administrativa Ecommerce",
         "keywords":"aplicacion administrativa , creador de ecommerse , como crear aplicacion ecommerse, como vender por internet,plataformas para administrar  mi negocio , ecommerce",

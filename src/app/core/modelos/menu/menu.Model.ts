@@ -3,7 +3,8 @@ export interface MenuModel{
     icon: string,
     name:string,
     redirecto: string,
-    nameRol:string,
+    nameRol:string[],
+    
 }
 
 export interface MenuActive{

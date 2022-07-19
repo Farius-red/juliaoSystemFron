@@ -1,3 +1,5 @@
+import { CardTablasComponent } from './cards/card-tablas/card-tablas.component';
+
 
 import { TablaPadreComponent } from './tablas/tabla-padre.component';
 
@@ -15,6 +17,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { FooterComponent } from './inicio/footer/footer.component';
+import { CardProductsComponent } from './cards/card-products/card-products.component';
 
 
 
@@ -26,6 +29,8 @@ import { FooterComponent } from './inicio/footer/footer.component';
      LoginComponent,
      TablaPadreComponent,
      RegistroComponent,
+     CardProductsComponent,
+     CardTablasComponent
      
     ],
   imports: [
@@ -44,6 +49,8 @@ import { FooterComponent } from './inicio/footer/footer.component';
     TablaPadreComponent,
     RegistroComponent,
     TranslateModule,
+    CardProductsComponent,
+    CardTablasComponent
    
   ]
 })

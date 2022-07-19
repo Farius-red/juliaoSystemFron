@@ -24,20 +24,7 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
-
-
-@mixin mv ($movil:450px, $desk:1200px, $tablet:800px) {
-    @media screen and (max-width:$desk ) {
-        @content;
-       }  
-
-    @media screen and (max-width: $tablet) {
-       @content;
-      }    
-      @media screen and (max-width:$movil) {
-        @content;
-        }
-}
+@import "theme/funtions";
 
 
 .button-primary{
@@ -55,3 +42,4 @@
   
     background: rgb(52, 51, 53)
 }
+

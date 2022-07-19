@@ -3,7 +3,7 @@ import { MenuActive } from 'src/app/core/modelos/menu/menu.Model';
 import { MenuState } from 'src/state/menu.state';
 import { getMenu } from './../state/menu.actions';
 import { Component } from '@angular/core';
-import {  TranslateService } from '@ngx-translate/core';
+import {   TranslateService } from '@ngx-translate/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 
@@ -17,19 +17,29 @@ import { Menu } from 'src/assets/utils/enums/menu';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
- 
-keywords:string;
+  langs:string[]=[];
+  keywords:string;
+  seleccionada:string
+
 @Select(MenuState.getMenulist) menu$:Observable<MenuModel[]>;
 menuId:string ="inicio";
   constructor(
     private titleService: Title,
     private metaService: Meta,
-    private translateService: TranslateService,
+    private translate: TranslateService,
     
     private route : Router,
     private store : Store
                                        )
-  { }
+  { 
+    this.langs= this.translate.getLangs();
+    this.translate.setDefaultLang('en');
+    this.translate.setDefaultLang('es');
+      this.translate.addLangs(["es","en"]);
+      this.translate.use('es');
+     console.log(this.seleccionada)
+    
+  }
 
 
   ngOnInit(): void {
@@ -37,6 +47,12 @@ menuId:string ="inicio";
     this.addMetas();
   }
 
+
+  cambiaLang(event:any){
+    console.log(event)
+    this.translate.use(event)
+     
+   }
  verificarRutas(){
   console.log(this.route.url);
   
@@ -48,13 +64,13 @@ menuId:string ="inicio";
  }
 
   addMetas(){
-    this.translateService.stream("meta_key_words.title").subscribe(res  => this.titleService.setTitle(res)); 
-   this.translateService.stream("meta_key_words.keywords").subscribe(r=> {
+    this.translate.stream("meta_key_words.title").subscribe(res  => this.titleService.setTitle(res)); 
+   this.translate.stream("meta_key_words.keywords").subscribe(r=> {
      if(r != "meta_key_words.keywords")
       this.metaService.addTag({name: 'keywords', content: `${r}`});
     });
 
-    this.translateService.stream("meta_key_words.description").subscribe(r=> {
+    this.translate.stream("meta_key_words.description").subscribe(r=> {
       if(r != "meta_key_words.description")
        this.metaService.addTag({name: 'description', content: `${r}`});
      });
@@ -63,15 +79,15 @@ menuId:string ="inicio";
   }
   configLangs() {
     // Add languages
-    this.translateService.addLangs(['en', 'es']);
+    this.translate.addLangs(['en', 'es']);
     // Buscar si el navegador informa el idioma
-    console.log(this.translateService.getBrowserLang());
-    if (this.translateService.getBrowserLang() == 'en') {
-       this.translateService.use('en');
-     } else if (this.translateService.getBrowserLang() == 'es') {
-       this.translateService.use('es');
+    console.log(this.translate.getBrowserLang());
+    if (this.translate.getBrowserLang() == 'en') {
+       this.translate.use('en');
+     } else if (this.translate.getBrowserLang() == 'es') {
+       this.translate.use('es');
      } else {
-       this.translateService.use('en');
+       this.translate.use('en');
           }
       }
 }

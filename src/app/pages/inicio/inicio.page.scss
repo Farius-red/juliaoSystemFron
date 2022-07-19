@@ -1,0 +1,32 @@
+@import "/src/theme/_funtions.scss";
+@import "/src/theme/componentes/varthemes.scss";
+
+.contenedor-grid{
+    @include responsive(sm){@include  grid(2,1fr,10px,3);};
+    @include responsive(md){@include grid(2,1fr,10px,4);};
+    @include responsive(lg){@include grid(2,1fr,10px,5);};
+    
+ background-color:rgba(249, 246, 255);
+    background: $backgroud1;
+    border-radius: 800px 70px 150px 100px;
+    box-shadow: $sombra1;
+
+
+     .item{
+
+       &1{
+           grid-column: span 2;
+           grid-row: 2/4;
+           border: 2px solid white;
+           border-radius: 50%;
+           background-color: aliceblue;
+           transform: rotate(-14deg);
+          
+            
+       }
+       &5{
+         grid-column: 2;
+         grid-row: 1;
+       }
+    }
+}
